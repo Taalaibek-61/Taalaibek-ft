@@ -1,1 +1,31 @@
 ﻿
+string[] array1 = new string[6] {"yes", "two", "good", "(*-", "ok","5621"};
+string[] array2 = new string[array1.Length];
+
+
+
+void SortElementLength(string[] array1, string[] array2)
+{
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+    if(array1[i].Length <= 3)
+        {
+        array2[count] = array1[i];
+        count++;
+        }
+    }
+}
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+SortElementLength(array1, array2);
+Console.WriteLine("Первоначальный массив строки: ");
+PrintArray(array1);
+Console.WriteLine("Измененный массив строки: ");
+PrintArray(array2);
